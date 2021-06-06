@@ -6,7 +6,7 @@ export default function Cart({ cartItem, removeFromCart }) {
   return (
     <div>
       {" "}
-      <h2 className="text-success">Cart</h2>
+      <h2 className="text-success ">Your Cart</h2>
       <div className="row">
         {car.length == 0 && <h1> No item added</h1>}{" "}
         {car.map((item, index) => (
@@ -17,7 +17,7 @@ export default function Cart({ cartItem, removeFromCart }) {
               alt="Card image cap"
             />
 
-            <h5 class="card-title">{item.title}</h5>
+            <h5 class="card-title text heading">{item.title}</h5>
 
             <h6 className="card-title">{item.price}</h6>
             <a

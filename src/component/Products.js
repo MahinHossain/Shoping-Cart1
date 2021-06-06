@@ -14,7 +14,7 @@ export default function Products({ addToCart1 }) {
 
   return (
     <div>
-      <h2>Products</h2>
+      <h2 className="text-success">Products</h2>
 
       <div className="row">
         {!state.isloading ? (
@@ -31,13 +31,12 @@ export default function Products({ addToCart1 }) {
                 src={item.image}
                 alt="Card image cap"
               />
-              <h5 class=" text">{item.title}</h5>
+              <h5 class="text heading">{item.title}</h5>
               <h6 className="text-danger">$ {item.price}</h6>
               <button
                 onClick={() => addToCart1(item)}
                 class="btn btn-outline-dark small"
               >
-                {" "}
                 Add to cart
               </button>
             </div>

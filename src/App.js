@@ -6,7 +6,6 @@ import Cart from "./component/Cart";
 import { getvalue, cartItemAc } from "./redux/Action";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import CartItemTest from "./component/CartItemTest";
 function App() {
   const dispatch = useDispatch();
 
@@ -22,6 +21,7 @@ function App() {
 
   const addToCart = (product) => {
     setcartItem([...cartItem, { ...product }]);
+    alert("item added to cart");
   };
 
   const removeFromCart = (item) => {
@@ -33,16 +33,21 @@ function App() {
     dispatch(cartItemAc(cartItem));
   }, [cartItem]);
   return (
-    <div className="App container">
-      <div className="float-right">
+    <div className="App container mt-5">
+      <div className="">
         <div className=" row">
-          <button className="btn btn-danger" onClick={() => viewItem()}>
+          <button
+            className=" btn btn-outline-dark  "
+            onClick={() => viewProduct()}
+          >
+            Products
+          </button>
+          <button
+            className="btn btn-danger ml-auto "
+            onClick={() => viewItem()}
+          >
             <i class="fas fa-shopping-cart"> </i>{" "}
             <span class="badge badge-danger">{cartItem.length}</span>
-          </button>
-
-          <button className=" btn btn-primary " onClick={() => viewProduct()}>
-            Products
           </button>
         </div>
       </div>

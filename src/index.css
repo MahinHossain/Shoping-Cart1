@@ -35,4 +35,8 @@ code {
 .text {
   font-size: 15px;
   text-align: left;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.heading {
+  height: 40px;
 }
