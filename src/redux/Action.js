@@ -1,15 +1,14 @@
 import axios from "axios";
 import * as Types from "./Types";
-export const getvalue = (e) => async (dispatch) => {
+export const getvalue = () => async (dispatch) => {
   let data = [];
-  // axios.get("http://todo-app37.herokuapp.com/loadtodo").then((res) => {
-  //   data = res.data;
-
-  //   data.sort();
-  //   data.reverse();
-  //   dispatch({ type: Types.GET_TASKS, payload: data });
-  // });
-  data = e;
-
-  dispatch({ type: Types.GET_TASKS, payload: data });
+  let isloading = false;
+  await axios.get("https://fakestoreapi.com/products").then((res) => {
+    data = res.data;
+    isloading = true;
+    dispatch({ type: Types.GET_TASKS, payload: { data, isloading } });
+  });
+};
+export const cartItemAc = (cartItem) => (dispatch) => {
+  dispatch({ type: Types.CART_ITEM, payload: cartItem });
 };

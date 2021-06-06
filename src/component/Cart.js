@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 export default function Cart({ cartItem, removeFromCart }) {
-  const state = useSelector((state) => state.reducer.valu);
+  const car = useSelector((state) => state.reducer.cartitem);
 
   return (
     <div>
       {" "}
-      <h2>Cart</h2>
+      <h2 className="text-success">Cart</h2>
       <div className="row">
-        {" "}
-        {cartItem.map((item, index) => (
+        {car.length == 0 && <h1> No item added</h1>}{" "}
+        {car.map((item, index) => (
           <div class="card heightwidth">
             <img
               class="card-img-top imgheightwidth"
@@ -18,7 +17,7 @@ export default function Cart({ cartItem, removeFromCart }) {
               alt="Card image cap"
             />
 
-            <h5 class="card-title">{item.name}</h5>
+            <h5 class="card-title">{item.title}</h5>
 
             <h6 className="card-title">{item.price}</h6>
             <a

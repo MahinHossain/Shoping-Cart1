@@ -2,15 +2,22 @@ import * as Types from "./Types";
 
 const initializitState = {
   valu: [],
+  cartitem: [],
 };
 
 function Reducer(state = initializitState, action) {
   switch (action.type) {
     case Types.GET_TASKS:
-      console.log(`action.payload`, action.payload);
       return {
         ...state,
         valu: action.payload,
+      };
+      break;
+    case Types.CART_ITEM:
+      console.log(`in reducer--`, action.payload);
+      return {
+        ...state,
+        cartitem: action.payload,
       };
       break;
 
